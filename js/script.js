@@ -47,3 +47,22 @@ function kelilingsegitiga(){
     }
     document.getElementById('keliling-input').value=keliling
 }
+
+function reset(){
+    let alasValue = '';
+    let tinggiValue = '';
+    let luas = '';
+
+    let s1Value = '';
+    let s2Value = '';
+    let s3Value = '';
+    let keliling = '';
+
+    document.getElementById('alas-input').value=alasValue
+    document.getElementById('tinggi-input').value=tinggiValue
+    document.getElementById('luas-input').value=luas
+    document.getElementById('S1-input').value=s1Value
+    document.getElementById('S2-input').value=s2Value
+    document.getElementById('S3-input').value=s3Value
+    document.getElementById('keliling-input').value=keliling
+}
