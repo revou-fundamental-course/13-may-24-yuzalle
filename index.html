@@ -7,109 +7,123 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header class="top-segitiga"> <!--top content segitiga-->
         <h1>Selamat Datang di Kalkulator Segitiga</h1>
         <p>Halo Kawan, Selamat datang di Kalkulator Segitiga</p>
         <p>Sebuah Web apps sederhana yang berfungsi untuk menghitung Luas dan Keliling Segitiga</p>
     </header>
+
     <section>
         <div class="section-content-segitiga">
             <h3>Segitiga</h3>
         </div>
-        <button type="button" id="switch-keliling-segitiga">
+        <button type="button" id="switch-keliling-segitiga" onclick="hideOrshow()">
             <u>Keliling Segitiga</u>
         </button>
     </section>
 
-    <section> <!--content Luas Segitiga-->
-        <div class="section-content-segitiga">
-            <h2> Luas Segitiga</h2>
-        </div>
-        <div class="image-segitiga">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyWOaVw3smdmInUbM_M2OE2iN1h5IXMYx5auyTZBaSA&s">
-        </div>
-        <p>Rumus Luas Segitiga yaitu :</p>
-        <h3 style="text-align: center;">
-            L = 1/2 x a x t
-        </h3>
-        <p>Di mana:</p>
-        <p>L = Luas</p>
-        <p>a = Panjang Alas</p>
-        <p>t = Tinggi</p>
-        <hr> 
+    <section id="luas-section"> <!--content Luas Segitiga-->
+        <section>
+            <div class="section-content-segitiga">
+                <h2> Luas Segitiga</h2>
+            </div>
+            <div class="image-segitiga">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyWOaVw3smdmInUbM_M2OE2iN1h5IXMYx5auyTZBaSA&s">
+            </div>
+            <p>Rumus Luas Segitiga yaitu :</p>
+            <h3 style="text-align: center;">
+                L = 1/2 x a x t
+            </h3>
+            <p>Di mana:</p>
+            <p>L = Luas</p>
+            <p>a = Panjang Alas</p>
+            <p>t = Tinggi</p>
+            <hr> 
+        </section>
+
+        <section> <!--Perhitungan Luas Segitiga-->
+            <header>
+            <h1 style="text-align: center;">
+                Hitung Luas Segitiga
+            </h1>
+            </header>
+    
+            <form>
+                <section>
+                    <div>
+                        <label>Alas:</label><input type="number" id="alas-input"/>
+                    </div>
+                    <div>
+                        <label>Tinggi:</label><input type="number" id="tinggi-input" />
+                    </div>
+                    <div>
+                        <label>Luas:</label><input type="number" id="luas-input" disabled="true"/>
+                    </div>
+                </section>
+                <br>
+    
+                <button type="button" onclick="luassegitiga()" id="luas-btn">Hitung</button>
+                <button type="button" id="reset-btn">Reset</button>
+    
+            </form>
+    
+        </section>
+
     </section>
 
-    <section> <!--Perhitungan-->
-        <header>
-        <h1 style="text-align: center;">
-            Hitung Luas Segitiga
-        </h1>
-        </header>
-
-        <form>
-            <section>
-                <div>
-                    <label>Alas:</label><input />
-                </div>
-                <div>
-                    <label>Tinggi:</label><input />
-                </div>
-            </section>
-            <br>
-
-            <button type="button">Hitung</button>
-            <button type="button" id="reset-btn">Reset</button>
-
-        </form>
-
-    </section>
-
-    <br>
-
-    <section> <!--content Keliling Segitiga-->
-        <div class="section-content-segitiga">
-            <h2> Keliling Segitiga</h2>
-        </div>
-        <div class="image-segitiga">
-            <img src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/01/15/1853786887.jpg">
-        </div>
-        <p>Rumus Keliling Segitiga yaitu :</p>
-        <h3 style="text-align: center;">
+    <section id="keliling-section" style= "padding-top: 32px; display: none;"> <!--content Keliling Segitiga-->
+        <section>
+            <div class="section-content-segitiga">
+                <h2> Keliling Segitiga</h2>
+            </div>
+            <div class="image-segitiga">
+                <img src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/01/15/1853786887.jpg">
+            </div>
+            <p>Rumus Keliling Segitiga yaitu :</p>
+            <h3 style="text-align: center;">
             K = S1 + S2 + S3
-        </h3>
-        <p>Di mana:</p>
-        <p>S1 = Sisi 1</p>
-        <p>S2 = Sisi 2</p>
-        <p>S3 = Sisi 3</p>
-        <hr> 
+            </h3>
+            <p>Di mana:</p>
+            <p>S1 = Sisi 1</p>
+            <p>S2 = Sisi 2</p>
+            <p>S3 = Sisi 3</p>
+            <hr> 
+        </section>
+
+        <section> <!--Perhitungan Keliling Segitiga-->
+            <header>
+            <h1 style="text-align: center;">
+                Hitung Keliling Segitiga
+            </h1>
+            </header>
+    
+            <form>
+                <section>
+                    <div>
+                        <label>S1:</label><input type="number" id="S1-input" />
+                    </div>
+                    <div>
+                        <label>S2:</label><input type="number" id="S2-input"/>
+                    </div>
+                    <div>
+                        <label>S3:</label><input type="number" id="S3-input" />
+                    </div>
+                    <div>
+                        <label>Keliling:</label><input type="number" id="keliling-input" disabled="true"/>
+                    </div>
+                </section>
+                <br>
+    
+                <button type="button" onclick="kelilingsegitiga()" id="keliling-btn">Hitung</button>
+                <button type="button" id="reset-btn">Reset</button>
+    
+            </form>
+    
+        </section>
+
     </section>
 
-    <section> <!--Perhitungan-->
-        <header>
-        <h1 style="text-align: center;">
-            Hitung Keliling Segitiga
-        </h1>
-        </header>
-
-        <form>
-            <section>
-                <div>
-                    <label>S1:</label><input />
-                </div>
-                <div>
-                    <label>S2:</label><input />
-                </div>
-                <div>
-                    <label>S3:</label><input />
-                </div>
-            </section>
-            <br>
-
-            <button type="button">Hitung</button>
-            <button type="button" id="reset-btn">Reset</button>
-
-        </form>
-
-    </section>
+    <script src="js/script.js"></script>
 </body>
 </html>
